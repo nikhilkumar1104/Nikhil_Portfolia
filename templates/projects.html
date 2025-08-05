@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects – Nikhil Kumar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #000;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #232323;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav a i {
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a:hover i {
+      transform: scale(1.2);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .projects-section {
+      max-width: 1400px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .projects-section h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color:whitesmoke#ffd700;
+      text-shadow: #000 0px 0px 10px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .project-card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: #7c4dff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+      margin-top: 25%;
+    }
+           #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 99;
+      font-size: 18px;
+      background-color: var(--accent);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+    }
+
+    #scrollTopBtn:hover {
+      transform: scale(1.1);
+      background-color: #9b6dff;
+    }
+
+    
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    margin-left: auto;
+    padding: 0.5rem;
+  }
+.logo {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+  nav {
+    display: none;
+    flex-direction: column;
+    direction: column;
+    background: #1b1b1b;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border-radius: 0 0 8px 8px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #333;
+  }
+      .projects-section {
+        padding: 0.5rem;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-section h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+
+ 
+   <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('show');
+    }
+
+    // Auto-close navbar on link click (mobile)
+    window.onload = () => {
+      document.querySelectorAll('#navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) toggleMenu();
+        });
+      });
+    };
+
+    // Scroll to top functionality
+    window.onscroll = function() {
+      document.getElementById("scrollTopBtn").style.display =
+        document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</head>
+<body>
+
+   <header>
+    <div class="logo">Nikhil Kumar</div>
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <nav id="navbar">
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="/about"><i class="fas fa-user"></i> About</a>
+      <a href="/projects"><i class="fas fa-laptop-code"></i> Projects</a>
+      <a href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+
+
+  <section class="projects-section">
+    <span style="display: inline-block; background: #d1fadf; color: #027a48; padding: 6px 12px; border-radius: 15px; margin-bottom: 1rem;">🟢 Available for Work</span>
+    <h1 style = "font-size: 3rem;">🚀 My Projects</h1>
+    <div class="project-grid">
+      <a href="/projects/crm" class="project-card">
+  <img src="/static/project/crm.jpg" alt="CRM System">
+  <h3>CRM System</h3>
+    </a>
+      <a href="/projects/gait" class="project-card">
+        <img src="/static/project/gait.jpeg" alt="Human Gait AI">
+        <h3>Human Gait Analysis</h3>
+      </a>
+
+      <a href="/projects/petrolpump" class="project-card">
+        <img src="static/project/petrolpump.jpg" alt="Petrol Pump">
+        <h3>Petrol Pump Management</h3>
+      </a>
+
+      <a href="/projects/stock" class="project-card">
+        <img src="static/project/stock.png" alt="Stock Market Prediction">
+        <h3>Stock Market Prediction</h3>
+    </a>
+    </div>
+  </section>
+  <footer>
+    © 2025 Nikhil Kumar. All rights reserved.
+  </footer>
+
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Back to top">
+    ↑
+  </button>
+</body>
+</html>

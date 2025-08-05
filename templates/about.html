@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – Nikhil Kumar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #000;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #232323;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a i {
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover i {
+      transform: scale(1.2);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .main-content {
+      padding: 2rem;
+    }
+
+    h1 {
+      color: whitesmoke;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-shadow: #000 2px 2px 4px;
+      
+    }
+
+    h2 {
+    color: rgb(116, 224, 214);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: #000 2px 2px 4px;
+    }
+
+    .download-btn {
+      font-size: 1rem;
+      background: #232323;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    p {
+     font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.85;
+  margin-bottom: 1.8rem;
+  color: #e0e0e0;
+  text-align: justify;
+    }
+
+    .resume-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .resume-image {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+    }
+    .resume-image:hover {
+       transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.995);
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: #232323;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      transition: all 0.3s ease;
+      align-items: center;
+    }
+    .btn-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+    .btn:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    }
+        #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 99;
+      font-size: 18px;
+      background-color: var(--accent);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+    }
+
+    #scrollTopBtn:hover {
+      transform: scale(1.1);
+      background-color: #9b6dff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+    }
+    @media (max-width: 768px) {
+        header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+        .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    margin-left: auto;
+    padding: 0.5rem;
+  }
+.logo {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+  nav {
+    display: none;
+    flex-direction: column;
+    direction: column;
+    background: #1b1b1b;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border-radius: 0 0 8px 8px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #333;
+  }
+
+      h1 {
+        font-size: 2rem;
+        
+      }
+    }
+  </style>
+ <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('show');
+    }
+
+    // Auto-close navbar on link click (mobile)
+    window.onload = () => {
+      document.querySelectorAll('#navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) toggleMenu();
+        });
+      });
+    };
+
+    // Scroll to top functionality
+    window.onscroll = function() {
+      document.getElementById("scrollTopBtn").style.display =
+        document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Nikhil Kumar</div>
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <nav id="navbar">
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="/about"><i class="fas fa-user"></i> About</a>
+      <a href="/projects"><i class="fas fa-laptop-code"></i> Projects</a>
+      <a href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+
+  <div class="main-content">
+   
+<span style="display: inline-block; background: #d1fadf; color: #027a48; padding: 6px 12px; border-radius: 15px; margin-bottom: 1rem;">🟢 Available for Work</span>
+        <h1>
+          👤 About Me
+        </h1>
+
+<h2>👤 About Me</h2>
+    <p>
+      Hello! I'm <strong>Nikhil Kumar</strong>, a passionate developer and tech enthusiast based in India. I specialize in building end-to-end software solutions that blend innovation with functionality. Whether it’s creating web apps, analyzing data, or automating processes — I love solving problems through technology.
+    </p>
+    <h2>🎓 Education</h2>
+    <p>
+      I completed my B.E. in Computer Science & Engineering (Data Science) from
+      <strong>Sahyadri College of Engineering & Management</strong>, Mangaluru. I have completed my diploma in electronics and communication from <strong>P.A Polytechnic</strong>, Mangaluru. My academic journey has equipped me with a strong foundation in computer science principles, data analysis, and software development.
+    </p>
+
+    <h2>💼 Internship Experience</h2>
+    <p>
+      <strong>Ukshati Technologies Pvt. Ltd.</strong><br>
+      I worked as a <strong>Scrum Master</strong> and Full-Stack Developer during my 8-week internship. I led the CRM module team and developed key features using <strong>React.js, Node.js, MySQL</strong>, and <strong>Docker</strong>. I handled backend API development, designed database schemas, and implemented modern UI/UX components. I also collaborated with cross-functional teams to finalize ERP module integration.
+    </p>
+    <p>
+      <strong>Coding Key LLP</strong><br>
+      As a Backend Developer Intern, I developed a search engine using <strong>Python, Flask, SQL</strong>, and <strong>BeautifulSoup</strong>. The system scraped internal pages and allowed fast keyword-based searches, helping improve internal content retrieval.
+    </p>
+
+    <h2>⚙️ Skills & Strengths</h2>
+    <p>
+      <strong>Languages & Tools:</strong> Python, JavaScript, SQL, HTML/CSS, Git, Docker<br>
+      <strong>Frameworks:</strong> Flask, React.js, Node.js, Express.js<br>
+      <strong>Data Science:</strong> Pandas, NumPy, Scikit-learn, OpenCV, Streamlit<br>
+      <strong>Database:</strong> MySQL, SQLite<br>
+      <strong>Other Strengths:</strong> Agile Workflow, System Design, API Integration, UI/UX Development, Team Collaboration
+    </p>
+
+    <h2>📹 Content Creation</h2>
+    <p>
+      I love sharing my learning and creativity with others. I create tech and lifestyle content on YouTube at <strong>@lifeasnikki11</strong> including college vlogs, tech tutorials, and short reels. I also post on <strong>Instagram</strong> and <strong>LinkedIn</strong> where I share tips, edits, and career guidance.
+    </p>
+
+    <h2>📄 My Resume</h2>
+    <!-- Resume Section -->
+<div class="resume-section" style="justify-content: center;">
+  <img class="resume-image" src="{{ url_for('static', filename='cv/resume_page_1.jpg') }}" alt="Resume Page 1">
+  <img class="resume-image" src="{{ url_for('static', filename='cv/resume_page_2.jpg') }}" alt="Resume Page 2">
+   
+</div>
+   <div class="btn-center">
+  <a href="/static/cv/Nikhil.pdf" download class="btn">📄 Download Resume</a>
+</div>
+
+  </div>
+  <footer>
+    © 2025 Nikhil Kumar. All rights reserved.
+  </footer>
+
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Back to top">
+    ↑
+  </button>
+</body>
+
+</html>

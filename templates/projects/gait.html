@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Human Gait AI – Nikhil Kumar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #000;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+      --card: #181818;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      min-height: 100vh;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #232323;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+    .main-content {
+      padding: 2rem;
+    }
+    h1 {
+      color: rgb(216, 197, 19);
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-shadow: #000 2px 2px 4px;
+    }
+    .project-image {
+      width: 75%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 50x 20px rgba(0, 0, 0, 0.4);
+      margin: 2rem auto;
+      display: block;
+    }
+    p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.85;
+      margin-bottom: 1.8rem;
+      color: #e0e0e0;
+      text-align: justify;
+    }
+    .tech-stack {
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    .back-btn {
+      background-color: #232323;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 20px;
+      box-shadow: #000 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .back-btn:hover {
+      background-color: #4f09b7;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+     .section {
+      margin-bottom: 30px;
+      margin-left: auto;
+    }
+.section h3 {
+  color: rgb(116, 224, 214);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: #000 2px 2px 4px;
+}
+
+.section p, .section ul {
+  line-height: 1.7;
+  font-size: 1.5rem;
+  margin-left: 0;
+  padding-left: 1.5rem;
+}
+
+.section ul li {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  color: #dcdcdc;
+}
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+    }
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 99;
+      font-size: 18px;
+      background-color: var(--accent);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+    }
+    #scrollTopBtn:hover {
+      transform: scale(1.1);
+      background-color: #9b6dff;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+      .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        margin-left: auto;
+        padding: 0.5rem;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #1b1b1b;
+        width: 100%;
+        padding: 1rem 0.5rem;
+        border-radius: 0 0 8px 8px;
+      }
+      nav.show {
+        display: flex;
+      }
+      nav a {
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid #333;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('show');
+    }
+    window.onload = () => {
+      document.querySelectorAll('#navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) toggleMenu();
+        });
+      });
+    };
+    window.onscroll = function() {
+      document.getElementById("scrollTopBtn").style.display =
+        document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ? "block" : "none";
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">Nikhil Kumar</div>
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <nav id="navbar">
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="/about"><i class="fas fa-user"></i> About</a>
+      <a href="/projects"><i class="fas fa-laptop-code"></i> Projects</a>
+      <a href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+  <main>
+    <div class="main-content">
+      <button class="back-btn" onclick="history.back()">← Back</button>
+      <h1>Human Gait Analysis using AI</h1>
+      <img src="/static/project/gait.jpeg" alt="Human Gait AI Project" class="project-image">
+
+      <div class="section">
+        <h3>What is Gait Analysis?</h3>
+        <p>Gait analysis is the study of human locomotion, specifically how people walk or run. It is widely used in healthcare, sports, and security to detect abnormalities, enhance performance, or identify individuals based on their walking patterns.</p>
+      </div>
+
+      <div class="section">
+        <h3>About the Project</h3>
+        <p>This Human Gait Analysis project uses Artificial Intelligence to track and analyze body movements in real time. Developed using OpenCV and Python, it leverages machine learning models to recognize gait patterns, predict anomalies, and identify individuals. The system can be used in rehabilitation, sports performance analysis, or even biometric authentication systems.</p>
+      </div>
+
+      <div class="section">
+        <h3>Features</h3>
+        <ul>
+          <li>Real-time gait tracking using OpenCV</li>
+          <li>Pose estimation and joint detection</li>
+          <li>Pattern classification and anomaly detection</li>
+          <li>Visual graph of movement dynamics</li>
+          <li>Trained on multiple public gait datasets</li>
+          <li>User-specific gait profiling</li>
+          <li>Portable and modular codebase</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Technologies Used</h3>
+        <ul>
+          <li><strong>Languages:</strong> Python</li>
+          <li><strong>Libraries:</strong> OpenCV, Mediapipe, Scikit-learn</li>
+          <li><strong>ML:</strong> KNN, Random Forest for classification</li>
+          <li><strong>Visualization:</strong> Matplotlib, Seaborn</li>
+          <li><strong>Development Tools:</strong> Jupyter Notebook, GitHub</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Conclusion</h3>
+        <p>The Human Gait AI project demonstrates how computer vision and machine learning can be combined for human motion analysis. It has applications in healthcare, security, sports, and biometric authentication. Through this project, I gained hands-on experience in pose estimation, real-time video processing, and ML model integration.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Nikhil Kumar. All rights reserved.
+  </footer>
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Back to top">↑</button>
+</body>
+</html>

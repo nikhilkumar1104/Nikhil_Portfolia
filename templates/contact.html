@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Nikhil Kumar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #000;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #232323;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav a i {
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a:hover i {
+      transform: scale(1.2);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+ .main-content {
+      padding: 2rem;
+    }
+
+.contact-intro {
+  text-align: left;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.badge {
+  display: inline-block;
+  background: #d1fadf;
+  color: #027a48;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+
+}
+
+
+.contact-header {
+font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: #ffd700;
+  text-shadow: #000 0px 0px 3px;
+}
+
+.contact-desc {
+ font-size: 1.3rem;
+  color: #ccc;
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+
+.contact-desc span {
+  display: inline-block;
+  max-width: 100%;
+}
+
+
+
+    .contact-container {
+      max-width: 2100px;
+      margin: auto;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+   
+
+    .contact-form, .contact-details {
+      flex: 1;
+      background-color: #1e1e1e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact-form h3, .contact-details h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      background-color: #2e2e2e;
+      border: 1px solid #444;
+      color: white;
+    }
+
+    .contact-form button {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .contact-color{
+      color: white;
+      text-decoration: none;
+      
+    }
+    .contact-form button:hover {
+      background: #5e35d5;
+    }
+
+    .contact-details .info div,
+    .contact-details .social a {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    .contact-details i {
+      color: var(--accent);
+      min-width: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-details .social a:hover i,
+    .contact-details .info div:hover i {
+      transform: scale(1.2);
+      color: white;
+    }
+
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+    }
+    @media (max-width: 768px) {
+      header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    margin-left: auto;
+    padding: 0.5rem;
+  }
+.logo {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+  nav {
+    display: none;
+    flex-direction: column;
+    direction: column;
+    background: #1b1b1b;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border-radius: 0 0 8px 8px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #333;
+  }
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('show');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">Nikhil Kumar</div>
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <nav id="navbar">
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="/about"><i class="fas fa-user"></i> About</a>
+      <a href="/projects"><i class="fas fa-laptop-code"></i> Projects</a>
+      <a href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+ <div class="main-content">
+
+  
+<div class="contact-intro">
+  <div class="badge">🟢 Available for Work</div>
+  <h1 class="contact-header">Let's Connect!</h1>
+  <div class="contact-desc">
+    <span>
+      Feel free to reach out with your projects, questions,<br>
+       or to connect.I'll respond promptly, and we can <br>
+       explore opportunities together.
+    </span>
+  </div>
+</div>
+
+<hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+
+<section class="contact-container">
+  <form class="contact-form" action="https://formspree.io/f/movllwow" method="POST">
+    <h3>Get in Touch</h3>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="Your email">
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="Type your message"></textarea>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- vertical line between sections -->
+  <div class="vertical-line"></div>
+
+  <div class="contact-details">
+    <h3>Contact Info</h3>
+    <div class="info">
+      <div><i class="fas fa-envelope"></i><a class="contact-color" href="mailto:nikhilshetty0411@gmail.com">nikhilshetty0411@gmail.com</a></div>
+      <div><i class="fas fa-phone-alt"></i><a class="contact-color" href="tel:+917090235269">+91 70902 35269</a></div>
+    </div>
+
+    <h3>Social Media</h3>
+    <div class="social">
+      <a href="https://github.com/nikhilkumar1104" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/nikhilkumar1104/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a href="https://www.youtube.com/@lifeasnikki11" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://www.instagram.com/nikhil__shetty___/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+  </div>
+</section>
+  <footer>
+    © 2025 Nikhil Kumar. All rights reserved.
+  </footer>
+</body>
+</html>
